@@ -115,6 +115,9 @@ stages{
         withCredentials([file(credentialsId: "${JENKINS_GCLOUD_CRED_ID}", variable: 'JENKINSGCLOUDCREDENTIAL')])
         {
         sh '''
+            echo "====="
+            echo ${JENKINSGCLOUDCREDENTIAL}
+            echo "====="
             gcloud auth activate-service-account --key-file=${JENKINSGCLOUDCREDENTIAL}
             gcloud config set compute/zone asia-southeast1-a
             gcloud config set compute/region asia-southeast1
