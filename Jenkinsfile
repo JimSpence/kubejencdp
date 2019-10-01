@@ -118,7 +118,7 @@ stages{
             echo "====="
             echo ${JENKINSGCLOUDCREDENTIAL}
             echo "====="
-            gcloud auth activate-service-account --key-file=C:\Users\jimsp\Downloads\pristine-surf-254112-e7fdcc81d8f3.json
+            gcloud auth activate-service-account --key-file="C:\Users\jimsp\Downloads\pristine-surf-254112-e7fdcc81d8f3.json"
             gcloud config set compute/zone europe-west2-a
             gcloud config set compute/region europe-west2
             gcloud config set project ${GCLOUD_PROJECT_ID}
