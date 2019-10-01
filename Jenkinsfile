@@ -118,9 +118,9 @@ stages{
             echo "====="
             echo ${JENKINSGCLOUDCREDENTIAL}
             echo "====="
-            gcloud auth activate-service-account --key-file=${JENKINSGCLOUDCREDENTIAL}
-            gcloud config set compute/zone asia-southeast1-a
-            gcloud config set compute/region asia-southeast1
+            gcloud auth activate-service-account --key-file=C:\Users\jimsp\Downloads\pristine-surf-254112-e7fdcc81d8f3.json
+            gcloud config set compute/zone europe-west2-a
+            gcloud config set compute/region europe-west2
             gcloud config set project ${GCLOUD_PROJECT_ID}
             gcloud container clusters get-credentials ${GCLOUD_K8S_CLUSTER_NAME}
             
