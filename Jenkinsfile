@@ -114,7 +114,7 @@ stages{
         steps{
         withCredentials([file(credentialsId: "${JENKINS_GCLOUD_CRED_ID}", variable: 'JENKINSGCLOUDCREDENTIAL')])
         {
-        sh """
+        sh '''
             gcloud auth activate-service-account --key-file=${JENKINSGCLOUDCREDENTIAL}
             gcloud config set compute/zone asia-southeast1-a
             gcloud config set compute/region asia-southeast1
@@ -131,7 +131,7 @@ stages{
             kubectl rollout status --v=5 --watch=true -f $BASE_DIR/k8s/$IMAGE_NAME/$IMAGE_NAME-deployment.yml
             
             gcloud auth revoke --all
-            """
+            '''
         }
         }
     }
