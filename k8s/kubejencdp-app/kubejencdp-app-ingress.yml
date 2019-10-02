@@ -2,9 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   labels:
-    app: __APP_NAME__
-  name: __APP_NAME__-ingress
+    app: kubejencdp-app
+  name: kubejencdp-app-ingress
 spec:
   backend:
-    serviceName: __APP_NAME__-svc
+    serviceName: kubejencdp-app-svc
     servicePort: httpport

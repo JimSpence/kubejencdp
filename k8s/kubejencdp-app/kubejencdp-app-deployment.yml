@@ -1,19 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: __APP_NAME__-dc
+  name: kubejencdp-app-dc
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: __APP_NAME__
-        updateTimestamp: "__TIMESTAMP__"
+        app: kubejencdp-app
+        updateTimestamp: "20191002160128233"
     spec:
       containers:
-      - name: __APP_NAME__-ctr
+      - name: kubejencdp-app-ctr
         image: >-
-          __IMAGE__
+          jimbono05/kubejencdp-app:1.0.0
         imagePullPolicy: Always
         ports:
         - name: httpport
@@ -22,6 +22,6 @@ spec:
           - name: API_ENDPOINT
             value: "http://127.0.0.1:8082/"
           - name: DEPLOY_TIMESTAMP
-            value: "__TIMESTAMP__"
+            value: "20191002160128233"
 
 
