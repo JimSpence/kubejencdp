@@ -131,7 +131,7 @@ stages{
 
             cd "$BASE_DIR"/k8s/${IMAGE_NAME}/.
             kubectl apply -f "$BASE_DIR"/k8s/${IMAGE_NAME}/
-            kubectl rollout status --v=5 --watch=true -f "$BASE_DIR"/k8s/$IMAGE_NAME/$IMAGE_NAME-deployment.yml
+            kubectl rollout status --v=5 --watch=true -f "$BASE_DIR"/k8s/$IMAGE_NAME/frontend.yaml
             
             gcloud auth revoke --all
             '''
